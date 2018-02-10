@@ -1,0 +1,1 @@
+d:\visual studio 2012\Projects\LibraryManager\LibraryManager\obj\Debug\LibraryManager.csprojResolveAssemblyReference.cache

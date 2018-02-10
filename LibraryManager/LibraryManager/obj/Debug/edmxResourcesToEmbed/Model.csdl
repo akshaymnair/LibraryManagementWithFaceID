@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UckLibMgrModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UckLibMgrEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Books" EntityType="UckLibMgrModel.Book" />
+    <EntitySet Name="Issues" EntityType="UckLibMgrModel.Issue" />
+    <EntitySet Name="Logins" EntityType="UckLibMgrModel.Login" />
+    <EntitySet Name="LogRegisters" EntityType="UckLibMgrModel.LogRegister" />
+    <EntitySet Name="Students" EntityType="UckLibMgrModel.Student" />
+    <AssociationSet Name="FK_Issues_Books" Association="UckLibMgrModel.FK_Issues_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="Issues" EntitySet="Issues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Issues_Students" Association="UckLibMgrModel.FK_Issues_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Issues" EntitySet="Issues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogRegisters_Students" Association="UckLibMgrModel.FK_LogRegisters_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="LogRegisters" EntitySet="LogRegisters" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Ttile" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="Author" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="Publisher" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="PublishedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ISBN" Type="String" Nullable="false" MaxLength="13" Unicode="false" FixedLength="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="copies" Type="Int32" />
+    <NavigationProperty Name="Issues" Relationship="UckLibMgrModel.FK_Issues_Books" FromRole="Books" ToRole="Issues" />
+  </EntityType>
+  <EntityType Name="Issue">
+    <Key>
+      <PropertyRef Name="IssueId" />
+    </Key>
+    <Property Name="IssueId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="fine" Type="Int32" />
+    <NavigationProperty Name="Book" Relationship="UckLibMgrModel.FK_Issues_Books" FromRole="Issues" ToRole="Books" />
+    <NavigationProperty Name="Student" Relationship="UckLibMgrModel.FK_Issues_Students" FromRole="Issues" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="LoginId" />
+    </Key>
+    <Property Name="LoginId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="LogRegister">
+    <Key>
+      <PropertyRef Name="LogRegisters" />
+    </Key>
+    <Property Name="LogRegisters" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginTime" Type="DateTime" Precision="3" />
+    <Property Name="LogoutTime" Type="DateTime" Precision="3" />
+    <Property Name="StudentId" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Student" Relationship="UckLibMgrModel.FK_LogRegisters_Students" FromRole="LogRegisters" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Branch" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="maxbook" Type="Int32" />
+    <NavigationProperty Name="Issues" Relationship="UckLibMgrModel.FK_Issues_Students" FromRole="Students" ToRole="Issues" />
+    <NavigationProperty Name="LogRegisters" Relationship="UckLibMgrModel.FK_LogRegisters_Students" FromRole="Students" ToRole="LogRegisters" />
+  </EntityType>
+  <Association Name="FK_Issues_Books">
+    <End Role="Books" Type="UckLibMgrModel.Book" Multiplicity="1" />
+    <End Role="Issues" Type="UckLibMgrModel.Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="Issues">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Issues_Students">
+    <End Role="Students" Type="UckLibMgrModel.Student" Multiplicity="1" />
+    <End Role="Issues" Type="UckLibMgrModel.Issue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="Issues">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogRegisters_Students">
+    <End Role="Students" Type="UckLibMgrModel.Student" Multiplicity="1" />
+    <End Role="LogRegisters" Type="UckLibMgrModel.LogRegister" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="LogRegisters">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

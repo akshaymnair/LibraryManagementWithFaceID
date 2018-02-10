@@ -1,0 +1,12 @@
+d:\visual studio 2012\Projects\face recognition\face recognition\bin\Debug\face recognition.exe.config
+d:\visual studio 2012\Projects\face recognition\face recognition\bin\Debug\face recognition.exe
+d:\visual studio 2012\Projects\face recognition\face recognition\bin\Debug\face recognition.pdb
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face recognition.csprojResolveAssemblyReference.cache
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face_recognition.Home.resources
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face_recognition.Properties.Resources.resources
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face recognition.csproj.GenerateResource.Cache
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face recognition.exe
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face recognition.pdb
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face_recognition.ADD.resources
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face_recognition.EDIT.resources
+d:\visual studio 2012\Projects\face recognition\face recognition\obj\Debug\face_recognition.PRINT.resources
