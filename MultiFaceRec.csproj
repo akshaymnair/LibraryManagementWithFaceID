@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC813884-5D90-4044-9571-8FB7C54D9612}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiFaceRec</RootNamespace>
+    <AssemblyName>MultiFaceRec</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Installer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MultiFaceRec.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV">
+      <HintPath>F:\Emgu\emgucv-windows-x86 2.2.1.1150\bin\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI">
+      <HintPath>F:\Emgu\emgucv-windows-x86 2.2.1.1150\bin\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util">
+      <HintPath>F:\Emgu\emgucv-windows-x86 2.2.1.1150\bin\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\LibManager\LibManager\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LibManager">
+      <HintPath>..\LibManager\LibManager\bin\Debug\LibManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addadmin.Designer.cs">
+      <DependentUpon>addadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="allstudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="allstudents.Designer.cs">
+      <DependentUpon>allstudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="book.Designer.cs">
+      <DependentUpon>book.cs</DependentUpon>
+    </Compile>
+    <Compile Include="book_return.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="book_return.Designer.cs">
+      <DependentUpon>book_return.cs</DependentUpon>
+    </Compile>
+    <Compile Include="details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="details.Designer.cs">
+      <DependentUpon>details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EigenObjectRecognizer.cs" />
+    <Compile Include="home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home.Designer.cs">
+      <DependentUpon>home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insert.Designer.cs">
+      <DependentUpon>insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="issue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="issue.Designer.cs">
+      <DependentUpon>issue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="issued.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="issued.Designer.cs">
+      <DependentUpon>issued.cs</DependentUpon>
+    </Compile>
+    <Compile Include="libraryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>libraryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="logregister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="logregister.Designer.cs">
+      <DependentUpon>logregister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="paswrd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="paswrd.Designer.cs">
+      <DependentUpon>paswrd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="renew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="renew.Designer.cs">
+      <DependentUpon>renew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchbook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchbook.Designer.cs">
+      <DependentUpon>searchbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student.Designer.cs">
+      <DependentUpon>student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UckLibMgrDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UckLibMgrDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UckLibMgrDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UckLibMgrDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UckLibMgrDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UckLibMgrDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllBooks.Designer.cs">
+      <DependentUpon>ViewAllBooks.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addadmin.resx">
+      <DependentUpon>addadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="allstudents.resx">
+      <DependentUpon>allstudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="book.resx">
+      <DependentUpon>book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="book_return.resx">
+      <DependentUpon>book_return.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="details.resx">
+      <DependentUpon>details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home.resx">
+      <DependentUpon>home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insert.resx">
+      <DependentUpon>insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="issue.resx">
+      <DependentUpon>issue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="issued.resx">
+      <DependentUpon>issued.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="logregister.resx">
+      <DependentUpon>logregister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="paswrd.resx">
+      <DependentUpon>paswrd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="register.resx">
+      <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="renew.resx">
+      <DependentUpon>renew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchbook.resx">
+      <DependentUpon>searchbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student.resx">
+      <DependentUpon>student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllBooks.resx">
+      <DependentUpon>ViewAllBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="libraryDataSet.xsc">
+      <DependentUpon>libraryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="libraryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>libraryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="libraryDataSet.xss">
+      <DependentUpon>libraryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\LibManager.Service.BookService.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UckLibMgrDataSet.xsc">
+      <DependentUpon>UckLibMgrDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UckLibMgrDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UckLibMgrDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UckLibMgrDataSet.xss">
+      <DependentUpon>UckLibMgrDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UckLibMgrDataSet1.xsc">
+      <DependentUpon>UckLibMgrDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UckLibMgrDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UckLibMgrDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UckLibMgrDataSet1.xss">
+      <DependentUpon>UckLibMgrDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UckLibMgrDataSet2.xsc">
+      <DependentUpon>UckLibMgrDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="UckLibMgrDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UckLibMgrDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UckLibMgrDataSet2.xss">
+      <DependentUpon>UckLibMgrDataSet2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Installer.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
